@@ -36,16 +36,19 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Hoa\Math\Sampler;
+namespace igorora\Math\Sampler;
 
-use Hoa\Consistency;
-use Hoa\Math;
-use Hoa\Zformat;
+use igorora\Math;
+use igorora\Zformat;
+use igorora\Zformat\Parameter;
+use igorora\Consistency\Consistency;
+use igorora\Zformat\Parameterizable;
+use igorora\Math\Exception\Exception;
 
 /**
  * Generic sampler.
  */
-abstract class Sampler implements Zformat\Parameterizable
+abstract class Sampler implements Parameterizable
 {
     /**
      * Parameters.
@@ -59,7 +62,7 @@ abstract class Sampler implements Zformat\Parameterizable
      */
     public function __construct(array $parameters = [])
     {
-        $this->_parameters = new Zformat\Parameter(
+        $this->_parameters = new Parameter(
             __CLASS__,
             [],
             [
@@ -126,7 +129,7 @@ abstract class Sampler implements Zformat\Parameterizable
 
         if (null === $exclude) {
             if ($lower > $upper) {
-                throw new Math\Exception(
+                throw new Exception(
                     'Unexpected values, integer %d should be lower than %d',
                     0,
                     [$lower, $upper]
@@ -142,7 +145,7 @@ abstract class Sampler implements Zformat\Parameterizable
         $upper -= count($exclude);
 
         if ($lower > $upper) {
-            throw new Math\Exception(
+            throw new Exception(
                 'Unexpected values, integer %d should be lower than %d',
                 1,
                 [$lower, $upper]
@@ -191,7 +194,7 @@ abstract class Sampler implements Zformat\Parameterizable
         */
 
         if ($lower > $upper) {
-            throw new Math\Exception(
+            throw new Exception(
                 'Unexpected values, float %f should be lower than %f',
                 2,
                 [$lower, $upper]
@@ -220,4 +223,4 @@ abstract class Sampler implements Zformat\Parameterizable
 /**
  * Flex entity.
  */
-Consistency::flexEntity('Hoa\Math\Sampler\Sampler');
+Consistency::flexEntity('igorora\Math\Sampler\Sampler');

@@ -35,15 +35,15 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Hoa\Math\Test\Unit;
+namespace igorora\Math\Test\Unit;
 
-use Hoa\Math\Context as CUT;
-use Hoa\Test;
+use igorora\Math\Context as CUT;
+use igorora\Test;
 
 /**
- * Class \Hoa\Math\Test\Unit\Context.
+ * Class \igorora\Math\Test\Unit\Context.
  *
- * Test suite of the Hoa\Math\Context class.
+ * Test suite of the igorora\Math\Context class.
  *
  * @license    New BSD License
  */
@@ -72,7 +72,7 @@ class Context extends Test\Unit\Suite
                 ->exception(function () use ($context, $name): void {
                     $context->getVariable($name);
                 })
-                    ->isInstanceOf('Hoa\Math\Exception\UnknownVariable');
+                    ->isInstanceOf('igorora\Math\Exception\UnknownVariable');
     }
 
     public function case_context_returns_variable_value(): void
@@ -135,7 +135,7 @@ class Context extends Test\Unit\Suite
                 ->exception(function () use ($context, $name): void {
                     $context->getConstant($name);
                 })
-                    ->isInstanceOf('Hoa\Math\Exception\UnknownConstant');
+                    ->isInstanceOf('igorora\Math\Exception\UnknownConstant');
     }
 
     public function case_context_exception_when_setting_already_defined_constant(): void
@@ -149,7 +149,7 @@ class Context extends Test\Unit\Suite
                 ->exception(function () use ($context, $name): void {
                     $context->addConstant($name, 42);
                 })
-                    ->isInstanceOf('Hoa\Math\Exception\AlreadyDefinedConstant');
+                    ->isInstanceOf('igorora\Math\Exception\AlreadyDefinedConstant');
     }
 
     public function case_context_returns_constant_value(): void
@@ -214,7 +214,7 @@ class Context extends Test\Unit\Suite
                 ->exception(function () use ($context, $name): void {
                     $context->getFunction($name);
                 })
-                    ->isInstanceOf('Hoa\Math\Exception\UnknownFunction');
+                    ->isInstanceOf('igorora\Math\Exception\UnknownFunction');
     }
 
     public function case_context_exception_when_setting_unknown_function(): void
@@ -228,7 +228,7 @@ class Context extends Test\Unit\Suite
                 ->exception(function () use ($context, $name): void {
                     $context->addFunction($name);
                 })
-                    ->isInstanceOf('Hoa\Math\Exception\UnknownFunction');
+                    ->isInstanceOf('igorora\Math\Exception\UnknownFunction');
     }
 
     public function case_context_returns_function_callable(): void
@@ -244,7 +244,7 @@ class Context extends Test\Unit\Suite
             ->when($result = $context->getFunction($name))
             ->then
                 ->object($result)
-                    ->isInstanceOf('Hoa\Consistency\Xcallable');
+                    ->isInstanceOf('igorora\Consistency\Xcallable');
     }
 
     public function case_context_returns_the_right_function_callable(): void

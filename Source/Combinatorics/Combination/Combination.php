@@ -36,9 +36,9 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Hoa\Math\Combinatorics\Combination;
+namespace igorora\Math\Combinatorics\Combination;
 
-use Hoa\Consistency;
+use igorora\Consistency\Consistency;
 
 /**
  * Some functions related to combinatorics.
@@ -90,4 +90,4 @@ class Combination
 /**
  * Flex entity.
  */
-Consistency::flexEntity('Hoa\Math\Combinatorics\Combination\Combination');
+Consistency::flexEntity('igorora\Math\Combinatorics\Combination\Combination');

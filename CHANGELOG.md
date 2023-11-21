@@ -40,10 +40,10 @@
 
   * Quality: Drop PHP5.4. (Ivan Enderlin, 2016-01-11T09:15:26+01:00)
   * Quality: Run devtools:cs. (Ivan Enderlin, 2016-01-09T09:05:01+01:00)
-  * Core: Remove `Hoa\Core`. (Ivan Enderlin, 2016-01-09T08:19:19+01:00)
-  * Parameters: Use `Hoa\Zformat`. (Ivan Enderlin, 2016-01-08T17:11:22+01:00)
-  * Consistency: Use `Hoa\Consistency`. (Ivan Enderlin, 2015-12-08T11:21:58+01:00)
-  * Exception: Use `Hoa\Exception`. (Ivan Enderlin, 2015-11-20T08:00:33+01:00)
+  * Core: Remove `igorora\Core`. (Ivan Enderlin, 2016-01-09T08:19:19+01:00)
+  * Parameters: Use `igorora\Zformat`. (Ivan Enderlin, 2016-01-08T17:11:22+01:00)
+  * Consistency: Use `igorora\Consistency`. (Ivan Enderlin, 2015-12-08T11:21:58+01:00)
+  * Exception: Use `igorora\Exception`. (Ivan Enderlin, 2015-11-20T08:00:33+01:00)
 
 # 0.15.10.26
 
@@ -62,7 +62,7 @@
 # 0.15.02.23
 
   * Add the `CHANGELOG.md` file. (Ivan Enderlin, 2015-02-23T09:26:08+01:00)
-  * Add `require-dev` with `hoa/test`. (Ivan Enderlin, 2015-01-29T14:53:44+01:00)
+  * Add `require-dev` with `igorora/test`. (Ivan Enderlin, 2015-01-29T14:53:44+01:00)
   * Happy new year! (Ivan Enderlin, 2015-01-05T14:41:11+01:00)
 
 # 0.14.12.22
@@ -76,7 +76,7 @@
 
 # 0.14.11.09
 
-  * Use `hoa/iterator` `~1.0`. (Ivan Enderlin, 2014-11-09T11:03:54+01:00)
+  * Use `igorora/iterator` `~1.0`. (Ivan Enderlin, 2014-11-09T11:03:54+01:00)
 
 # 0.14.09.23
 

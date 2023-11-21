@@ -35,13 +35,13 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Hoa\Math\Test\Unit\Combinatorics\Combination;
+namespace igorora\Math\Test\Unit\Combinatorics\Combination;
 
-use Hoa\Math\Combinatorics\Combination\CartesianProduct as CUT;
-use Hoa\Test;
+use igorora\Math\Combinatorics\Combination\CartesianProduct as CUT;
+use igorora\Test;
 
 /**
- * Class \Hoa\Math\Test\Unit\Combinatorics\Combination\CartesianProduct.
+ * Class \igorora\Math\Test\Unit\Combinatorics\Combination\CartesianProduct.
  *
  * Test suite of the cartesian product.
  *

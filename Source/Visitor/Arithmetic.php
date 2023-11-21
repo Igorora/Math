@@ -36,15 +36,16 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Hoa\Math\Visitor;
+namespace igorora\Math\Visitor;
 
-use Hoa\Math;
-use Hoa\Visitor;
+use igorora\Math\Context;
+use igorora\Visitor\Visit;
+use igorora\Visitor\Element;
 
 /**
  * Evaluate arithmetical expressions.
  */
-class Arithmetic implements Visitor\Visit
+class Arithmetic implements Visit
 {
     /**
      * Visitor context containing the list of supported functions, constants and variables
@@ -64,7 +65,7 @@ class Arithmetic implements Visitor\Visit
     /**
      * Set visitor's context
      */
-    public function setContext(Math\Context $context): Math\Context
+    public function setContext(Context $context): Context
     {
         $old = $this->_context;
 
@@ -76,21 +77,24 @@ class Arithmetic implements Visitor\Visit
     /**
      * Get visitor's context
      */
-    public function getContext(): Math\Context
+    public function getContext(): Context
     {
         return $this->_context;
     }
 
     /**
      * Visit an element.
+     * @param \igorora\Compiler\Llk\TreeNode $element
      */
     public function visit(
-        Visitor\Element $element,
+        Element $element,
         &$handle = null,
         $eldnah  = null
     ) {
         $type     = $element->getId();
         $children = $element->getChildren();
+        $_ = null;
+        $a = null;
 
         if (null === $handle) {
             $handle = function ($x) {
@@ -264,7 +268,7 @@ class Arithmetic implements Visitor\Visit
     /**
      * Get a function.
      */
-    public function getFunction(string $name): \Hoa\Consistency\Xcallable
+    public function getFunction(string $name): \igorora\Consistency\Xcallable
     {
         return $this->_context->getFunction($name);
     }
@@ -304,7 +308,7 @@ class Arithmetic implements Visitor\Visit
     protected function initializeContext(): void
     {
         if (null === $this->_context) {
-            $this->_context = new Math\Context();
+            $this->_context = new Context();
         }
 
         return;

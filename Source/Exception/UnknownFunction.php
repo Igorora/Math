@@ -36,10 +36,10 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Hoa\Math\Exception;
+namespace igorora\Math\Exception;
 
 /**
- * Extending the \Hoa\Math\Exception class.
+ * Extending the \igorora\Math\Exception class.
  */
 class UnknownFunction extends Exception
 {

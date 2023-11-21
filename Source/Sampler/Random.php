@@ -36,7 +36,7 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Hoa\Math\Sampler;
+namespace igorora\Math\Sampler;
 
 /**
  * Random sampler.

@@ -35,13 +35,13 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Hoa\Math\Test\Unit\Sampler;
+namespace igorora\Math\Test\Unit\Sampler;
 
-use Hoa\Math\Sampler\Random as CUT;
-use Hoa\Test;
+use igorora\Math\Sampler\Random as CUT;
+use igorora\Test;
 
 /**
- * Class \Hoa\Math\Test\Unit\Sampler\Random.
+ * Class \igorora\Math\Test\Unit\Sampler\Random.
  *
  * Test suite of the random sampler.
  *

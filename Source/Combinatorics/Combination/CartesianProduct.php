@@ -36,9 +36,11 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Hoa\Math\Combinatorics\Combination;
+namespace igorora\Math\Combinatorics\Combination;
 
-use Hoa\Iterator;
+use igorora\Iterator\Map;
+use igorora\Iterator\Iterator;
+use igorora\Iterator\IteratorIterator;
 
 /**
  * Cartesian n-ary product iterator:
@@ -85,9 +87,9 @@ class CartesianProduct implements Iterator
     {
         foreach (func_get_args() as $s) {
             if (is_array($s)) {
-                $s = new Iterator\Map($s);
+                $s = new Map($s);
             } else {
-                $s = new Iterator\IteratorIterator($s);
+                $s = new IteratorIterator($s);
             }
 
             $this->_sets[] = $s;
@@ -132,7 +134,7 @@ class CartesianProduct implements Iterator
     /**
      * Advance the internal collection pointer, and return the current value.
      */
-    public function next(): array
+    public function next(): void
     {
         for ($i = 0; $i <= $this->_max; ++$i) {
             $this->_sets[$i]->next();
@@ -153,13 +155,13 @@ class CartesianProduct implements Iterator
         ++$this->_key;
         $this->_current();
 
-        return $this->current();
+        return; // $this->current();
     }
 
     /**
      * Rewind the internal collection pointer, and return the first collection.
      */
-    public function rewind(): array
+    public function rewind(): void
     {
         $this->_break = empty($this->_sets);
         $this->_key   = 0;
@@ -170,7 +172,7 @@ class CartesianProduct implements Iterator
 
         $this->_current();
 
-        return $this->current();
+        return; // $this->current();
     }
 
     /**

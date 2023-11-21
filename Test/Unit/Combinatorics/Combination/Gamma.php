@@ -35,13 +35,13 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Hoa\Math\Test\Unit\Combinatorics\Combination;
+namespace igorora\Math\Test\Unit\Combinatorics\Combination;
 
-use Hoa\Math\Combinatorics\Combination\Gamma as CUT;
-use Hoa\Test;
+use igorora\Math\Combinatorics\Combination\Gamma as CUT;
+use igorora\Test;
 
 /**
- * Class \Hoa\Math\Test\Unit\Combinatorics\Combination\Gamma.
+ * Class \igorora\Math\Test\Unit\Combinatorics\Combination\Gamma.
  *
  * Test suite of the Γ iterator.
  *

@@ -36,10 +36,10 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Hoa\Math;
+namespace igorora\Math;
 
 /**
- * Class \Hoa\Math\Context.
+ * Class \igorora\Math\Context.
  */
 class Context
 {
@@ -139,7 +139,7 @@ class Context
     /**
      * Get a function.
      */
-    public function getFunction(string $name): \Hoa\Consistency\Xcallable
+    public function getFunction(string $name): \igorora\Consistency\Xcallable
     {
         if (false === $this->_functions->offsetExists($name)) {
             throw new Exception\UnknownFunction(

@@ -1,14 +1,14 @@
 <p align="center">
-  <img src="https://static.hoa-project.net/Image/Hoa.svg" alt="Hoa" width="250px" />
+  <img src="https://static.igorora-project.net/Image/Hoa.svg" alt="Hoa" width="250px" />
 </p>
 
 ---
 
 <p align="center">
-  <a href="https://travis-ci.org/hoaproject/math"><img src="https://img.shields.io/travis/hoaproject/math/master.svg" alt="Build status" /></a>
-  <a href="https://coveralls.io/github/hoaproject/math?branch=master"><img src="https://img.shields.io/coveralls/hoaproject/math/master.svg" alt="Code coverage" /></a>
-  <a href="https://packagist.org/packages/hoa/math"><img src="https://img.shields.io/packagist/dt/hoa/math.svg" alt="Packagist" /></a>
-  <a href="https://hoa-project.net/LICENSE"><img src="https://img.shields.io/packagist/l/hoa/math.svg" alt="License" /></a>
+  <a href="https://travis-ci.org/igororaproject/math"><img src="https://img.shields.io/travis/igororaproject/math/master.svg" alt="Build status" /></a>
+  <a href="https://coveralls.io/github/igororaproject/math?branch=master"><img src="https://img.shields.io/coveralls/igororaproject/math/master.svg" alt="Code coverage" /></a>
+  <a href="https://packagist.org/packages/igorora/math"><img src="https://img.shields.io/packagist/dt/igorora/math.svg" alt="Packagist" /></a>
+  <a href="https://igorora-project.net/LICENSE"><img src="https://img.shields.io/packagist/l/igorora/math.svg" alt="License" /></a>
 </p>
 <p align="center">
   Hoa is a <strong>modular</strong>, <strong>extensible</strong> and
@@ -16,29 +16,29 @@
   Moreover, Hoa aims at being a bridge between industrial and research worlds.
 </p>
 
-# Hoa\Math
+# igorora\Math
 
-[![Help on IRC](https://img.shields.io/badge/help-%23hoaproject-ff0066.svg)](https://webchat.freenode.net/?channels=#hoaproject)
-[![Help on Gitter](https://img.shields.io/badge/help-gitter-ff0066.svg)](https://gitter.im/hoaproject/central)
-[![Documentation](https://img.shields.io/badge/documentation-hack_book-ff0066.svg)](https://central.hoa-project.net/Documentation/Library/Math)
-[![Board](https://img.shields.io/badge/organisation-board-ff0066.svg)](https://waffle.io/hoaproject/math)
+[![Help on IRC](https://img.shields.io/badge/help-%23igororaproject-ff0066.svg)](https://webchat.freenode.net/?channels=#igororaproject)
+[![Help on Gitter](https://img.shields.io/badge/help-gitter-ff0066.svg)](https://gitter.im/igororaproject/central)
+[![Documentation](https://img.shields.io/badge/documentation-hack_book-ff0066.svg)](https://central.igorora-project.net/Documentation/Library/Math)
+[![Board](https://img.shields.io/badge/organisation-board-ff0066.svg)](https://waffle.io/igororaproject/math)
 
 This library provides tools around mathematical operations.
 
-[Learn more](https://central.hoa-project.net/Documentation/Library/Math).
+[Learn more](https://central.igorora-project.net/Documentation/Library/Math).
 
 ## Installation
 
 With [Composer](https://getcomposer.org/), to include this library into
 your dependencies, you need to
-require [`hoa/math`](https://packagist.org/packages/hoa/math):
+require [`igorora/math`](https://packagist.org/packages/igorora/math):
 
 ```sh
-$ composer require hoa/math '~1.0'
+$ composer require igorora/math '~1.0'
 ```
 
 For more installation procedures, please read [the Source
-page](https://hoa-project.net/Source.html).
+page](https://igorora-project.net/Source.html).
 
 ## Testing
 
@@ -51,11 +51,11 @@ $ composer install
 Then, to run all the test suites:
 
 ```sh
-$ vendor/bin/hoa test:run
+$ vendor/bin/igorora test:run
 ```
 
 For more information, please read the [contributor
-guide](https://hoa-project.net/Literature/Contributor/Guide.html).
+guide](https://igorora-project.net/Literature/Contributor/Guide.html).
 
 ## Quick usage
 
@@ -64,20 +64,20 @@ expressions.
 
 ### Evaluation of arithmetical expressions
 
-The `hoa://Library/Math/Arithmetic.pp` describes the form of an arithmetical
+The `igorora://Library/Math/Arithmetic.pp` describes the form of an arithmetical
 expression. Therefore, we will use the classical workflow when manipulating a
-grammar, that involves the [`Hoa\Compiler`
-library](https://central.hoa-project.net/Resource/Library/Compiler) and the
-`Hoa\Math\Visitor\Arithmetic` class.
+grammar, that involves the [`igorora\Compiler`
+library](https://central.igorora-project.net/Resource/Library/Compiler) and the
+`igorora\Math\Visitor\Arithmetic` class.
 
 ```php
 // 1. Load the compiler.
-$compiler = Hoa\Compiler\Llk::load(
-    new Hoa\File\Read('hoa://Library/Math/Arithmetic.pp')
+$compiler = igorora\Compiler\Llk::load(
+    new igorora\File\Read('igorora://Library/Math/Arithmetic.pp')
 );
 
 // 2. Load the visitor, aka the “evaluator”.
-$visitor    = new Hoa\Math\Visitor\Arithmetic();
+$visitor    = new igorora\Math\Visitor\Arithmetic();
 
 // 3. Declare the expression.
 $expression = '1 / 2 / 3 + 4 * (5 * 2 - 6) * PI / avg(7, 8, 9)';
@@ -96,7 +96,7 @@ var_dump(
  */
 
 // Bonus. Print the AST of the expression.
-$dump = new Hoa\Compiler\Visitor\Dump();
+$dump = new igorora\Compiler\Visitor\Dump();
 echo $dump->visit($ast);
 
 /**
@@ -150,37 +150,37 @@ var_dump(
 ## Documentation
 
 The
-[hack book of `Hoa\Math`](https://central.hoa-project.net/Documentation/Library/Math) contains
+[hack book of `igorora\Math`](https://central.igorora-project.net/Documentation/Library/Math) contains
 detailed information about how to use this library and how it works.
 
 To generate the documentation locally, execute the following commands:
 
 ```sh
-$ composer require --dev hoa/devtools
-$ vendor/bin/hoa devtools:documentation --open
+$ composer require --dev igorora/devtools
+$ vendor/bin/igorora devtools:documentation --open
 ```
 
 More documentation can be found on the project's website:
-[hoa-project.net](https://hoa-project.net/).
+[igorora-project.net](https://igorora-project.net/).
 
 ## Getting help
 
 There are mainly two ways to get help:
 
-  * On the [`#hoaproject`](https://webchat.freenode.net/?channels=#hoaproject)
+  * On the [`#igororaproject`](https://webchat.freenode.net/?channels=#igororaproject)
     IRC channel,
-  * On the forum at [users.hoa-project.net](https://users.hoa-project.net).
+  * On the forum at [users.igorora-project.net](https://users.igorora-project.net).
 
 ## Contribution
 
 Do you want to contribute? Thanks! A detailed [contributor
-guide](https://hoa-project.net/Literature/Contributor/Guide.html) explains
+guide](https://igorora-project.net/Literature/Contributor/Guide.html) explains
 everything you need to know.
 
 ## License
 
 Hoa is under the New BSD License (BSD-3-Clause). Please, see
-[`LICENSE`](https://hoa-project.net/LICENSE) for details.
+[`LICENSE`](https://igorora-project.net/LICENSE) for details.
 
 ## Related projects
 

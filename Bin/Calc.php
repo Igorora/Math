@@ -33,15 +33,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Hoa\Math\Bin;
+namespace igorora\Math\Bin;
 
-use Hoa\Compiler;
-use Hoa\Console;
-use Hoa\File;
-use Hoa\Math;
+use igorora\Compiler;
+use igorora\Console;
+use igorora\File;
+use igorora\Math;
 
 /**
- * Class \Hoa\Math\Bin\Calc.
+ * Class \igorora\Math\Bin\Calc.
  *
  * A simple calculator.
  *
@@ -84,7 +84,7 @@ class Calc extends Console\Dispatcher\Kit
         $this->parser->listInputs($expression);
 
         $compiler = Compiler\Llk::load(
-            new File\Read('hoa://Library/Math/Arithmetic.pp')
+            new File\Read('igorora://Library/Math/Arithmetic.pp')
         );
         $visitor  = new Math\Visitor\Arithmetic();
         $dump     = new Compiler\Visitor\Dump();

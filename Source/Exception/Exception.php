@@ -36,19 +36,19 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Hoa\Math\Exception;
+namespace igorora\Math\Exception;
 
-use Hoa\Consistency;
-use Hoa\Exception as HoaException;
+use igorora\Consistency\Consistency;
+use igorora\Exception\Exception as IgororaException;
 
 /**
- * Extending the \Hoa\Exception\Exception class.
+ * Extending the \igorora\Exception\Exception class.
  */
-class Exception extends HoaException
+class Exception extends IgororaException
 {
 }
 
 /**
  * Flex entity.
  */
-Consistency::flexEntity('Hoa\Math\Exception\Exception');
+Consistency::flexEntity('igorora\Math\Exception\Exception');

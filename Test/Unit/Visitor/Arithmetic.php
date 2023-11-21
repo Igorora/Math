@@ -35,20 +35,20 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Hoa\Math\Test\Unit\Visitor;
+namespace igorora\Math\Test\Unit\Visitor;
 
-use Hoa\Compiler;
-use Hoa\File;
-use Hoa\Math as LUT;
-use Hoa\Math\Visitor\Arithmetic as CUT;
-use Hoa\Regex;
-use Hoa\Test;
+use igorora\Compiler;
+use igorora\File;
+use igorora\Math as LUT;
+use igorora\Math\Visitor\Arithmetic as CUT;
+use igorora\Regex;
+use igorora\Test;
 
 /**
- * Class \Hoa\Math\Test\Unit\Visitor\Arithmetic.
+ * Class \igorora\Math\Test\Unit\Visitor\Arithmetic.
  *
- * Test suite of the hoa://Library/Math/Arithmetic.pp grammar and the
- * Hoa\Math\Visitor\Arithmetic class.
+ * Test suite of the igorora://Library/Math/Arithmetic.pp grammar and the
+ * igorora\Math\Visitor\Arithmetic class.
  *
  * @license    New BSD License
  */
@@ -60,7 +60,7 @@ class Arithmetic extends Test\Unit\Suite
             ->given(
                 $sampler = new Compiler\Llk\Sampler\BoundedExhaustive(
                     Compiler\Llk\Llk::load(
-                        new File\Read('hoa://Library/Math/Test/Unit/Arithmetic.pp')
+                        new File\Read('igorora://Library/Math/Test/Unit/Arithmetic.pp')
                     ),
                     new Regex\Visitor\Isotropic(
                         new LUT\Sampler\Random()
@@ -68,7 +68,7 @@ class Arithmetic extends Test\Unit\Suite
                     9
                 ),
                 $compiler = Compiler\Llk\Llk::load(
-                    new File\Read('hoa://Library/Math/Arithmetic.pp')
+                    new File\Read('igorora://Library/Math/Arithmetic.pp')
                 ),
                 $visitor  = new CUT()
             )
@@ -104,24 +104,24 @@ class Arithmetic extends Test\Unit\Suite
     {
         $this
             ->given(
-                $compiler     = Compiler\Llk\Llk::load(new File\Read('hoa://Library/Math/Arithmetic.pp')),
+                $compiler     = Compiler\Llk\Llk::load(new File\Read('igorora://Library/Math/Arithmetic.pp')),
                 $visitor      = new CUT(),
                 $variableName = 'unknown_variable'
             )
             ->then
                 ->object($compiler->parse($variableName . ' * 2'))
-                    ->isInstanceOf('Hoa\Compiler\Llk\TreeNode')
+                    ->isInstanceOf('igorora\Compiler\Llk\TreeNode')
                 ->exception(function () use ($variableName, $compiler, $visitor): void {
                     $visitor->visit($compiler->parse($variableName . ' * 2'));
                 })
-                    ->isInstanceOf('Hoa\Math\Exception\UnknownVariable');
+                    ->isInstanceOf('igorora\Math\Exception\UnknownVariable');
     }
 
     public function case_visitor_variable(): void
     {
         $this
             ->given(
-                $compiler      = Compiler\Llk\Llk::load(new File\Read('hoa://Library/Math/Arithmetic.pp')),
+                $compiler      = Compiler\Llk\Llk::load(new File\Read('igorora://Library/Math/Arithmetic.pp')),
                 $visitor       = new CUT(),
                 $variableName  = 'a_variable',
                 $variableValue = 42
@@ -138,24 +138,24 @@ class Arithmetic extends Test\Unit\Suite
     {
         $this
             ->given(
-                $compiler      = Compiler\Llk\Llk::load(new File\Read('hoa://Library/Math/Arithmetic.pp')),
+                $compiler      = Compiler\Llk\Llk::load(new File\Read('igorora://Library/Math/Arithmetic.pp')),
                 $visitor       = new CUT(),
                 $constantName  = 'UNKNOWN_CONSTANT'
             )
             ->then
                 ->object($compiler->parse($constantName . ' * 2'))
-                    ->isInstanceOf('Hoa\Compiler\Llk\TreeNode')
+                    ->isInstanceOf('igorora\Compiler\Llk\TreeNode')
                 ->exception(function () use ($constantName, $compiler, $visitor): void {
                     $visitor->visit($compiler->parse($constantName . ' * 2'));
                 })
-                    ->isInstanceOf('Hoa\Math\Exception\UnknownConstant');
+                    ->isInstanceOf('igorora\Math\Exception\UnknownConstant');
     }
 
     public function case_visitor_constant(): void
     {
         $this
             ->given(
-                $compiler      = Compiler\Llk\Llk::load(new File\Read('hoa://Library/Math/Arithmetic.pp')),
+                $compiler      = Compiler\Llk\Llk::load(new File\Read('igorora://Library/Math/Arithmetic.pp')),
                 $visitor       = new CUT(),
                 $constantName  = 'A_CONSTANT',
                 $constantValue = 42
@@ -170,24 +170,24 @@ class Arithmetic extends Test\Unit\Suite
     {
         $this
             ->given(
-                $compiler       = Compiler\Llk\Llk::load(new File\Read('hoa://Library/Math/Arithmetic.pp')),
+                $compiler       = Compiler\Llk\Llk::load(new File\Read('igorora://Library/Math/Arithmetic.pp')),
                 $visitor        = new CUT(),
                 $functionName   = 'unknown_function'
             )
             ->then
                 ->object($compiler->parse($functionName . '() * 2'))
-                    ->isInstanceOf('Hoa\Compiler\Llk\TreeNode')
+                    ->isInstanceOf('igorora\Compiler\Llk\TreeNode')
                 ->exception(function () use ($functionName, $compiler, $visitor): void {
                     $visitor->visit($compiler->parse($functionName . '() * 2'));
                 })
-                    ->isInstanceOf('Hoa\Math\Exception\UnknownFunction');
+                    ->isInstanceOf('igorora\Math\Exception\UnknownFunction');
     }
 
     public function case_visitor_function(): void
     {
         $this
             ->given(
-                $compiler       = Compiler\Llk\Llk::load(new File\Read('hoa://Library/Math/Arithmetic.pp')),
+                $compiler       = Compiler\Llk\Llk::load(new File\Read('igorora://Library/Math/Arithmetic.pp')),
                 $visitor        = new CUT(),
                 $functionName   = 'a_function',
                 $functionResult = 42
@@ -204,9 +204,9 @@ class Arithmetic extends Test\Unit\Suite
     {
         $this
             ->given(
-                $compiler       = Compiler\Llk\Llk::load(new File\Read('hoa://Library/Math/Arithmetic.pp')),
+                $compiler       = Compiler\Llk\Llk::load(new File\Read('igorora://Library/Math/Arithmetic.pp')),
                 $visitor        = new CUT(),
-                $context        = new \Mock\Hoa\Math\Context(),
+                $context        = new \Mock\igorora\Math\Context(),
                 $variableName  = 'a_variable',
                 $variableValue = 42
             )

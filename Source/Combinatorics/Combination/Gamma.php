@@ -36,15 +36,15 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Hoa\Math\Combinatorics\Combination;
+namespace igorora\Math\Combinatorics\Combination;
 
-use Hoa\Iterator;
+use igorora\Iterator\Iterator;
 
 /**
  * Gamma^n_k denotes the set of k-uples whose sum of elements is n. For example:
  * Gamma^2_3 = {(2, 0, 0), (1, 1, 0), (1, 0, 1), (0, 2, 0), (0, 1, 1), (0, 0, 2)}.
  * For any k-uple γ and any α in {1, …, k}, γ_α denotes the α-th element of γ.
- * This class is identical to \Hoa\Math\Combinatorics\Combination::Gamma with a
+ * This class is identical to \igorora\Math\Combinatorics\Combination::Gamma with a
  * “yield” keyword.
  */
 class Gamma implements Iterator

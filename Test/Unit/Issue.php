@@ -35,15 +35,15 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Hoa\Math\Test\Unit;
+namespace igorora\Math\Test\Unit;
 
-use Hoa\Compiler;
-use Hoa\File;
-use Hoa\Math\Visitor\Arithmetic as CUT;
-use Hoa\Test;
+use igorora\Compiler;
+use igorora\File;
+use igorora\Math\Visitor\Arithmetic as CUT;
+use igorora\Test;
 
 /**
- * Class \Hoa\Math\Test\Unit\Issue.
+ * Class \igorora\Math\Test\Unit\Issue.
  *
  * Test suite of detected issues.
  *
@@ -55,7 +55,7 @@ class Issue extends Test\Unit\Suite implements Test\Decorrelated
     {
         $this
             ->given(
-                $compiler = Compiler\Llk\Llk::load(new File\Read('hoa://Library/Math/Arithmetic.pp')),
+                $compiler = Compiler\Llk\Llk::load(new File\Read('igorora://Library/Math/Arithmetic.pp')),
                 $visitor  = new CUT(),
                 $ast      = $compiler->parse('1 / 0')
             )
@@ -69,7 +69,7 @@ class Issue extends Test\Unit\Suite implements Test\Decorrelated
     {
         $this
             ->given(
-                $compiler = Compiler\Llk\Llk::load(new File\Read('hoa://Library/Math/Arithmetic.pp')),
+                $compiler = Compiler\Llk\Llk::load(new File\Read('igorora://Library/Math/Arithmetic.pp')),
                 $visitor  = new CUT(),
                 $ast      = $compiler->parse('1 / (1 / 0)')
             )
@@ -83,7 +83,7 @@ class Issue extends Test\Unit\Suite implements Test\Decorrelated
     {
         $this
             ->given(
-                $compiler = Compiler\Llk\Llk::load(new File\Read('hoa://Library/Math/Arithmetic.pp')),
+                $compiler = Compiler\Llk\Llk::load(new File\Read('igorora://Library/Math/Arithmetic.pp')),
                 $visitor  = new CUT()
             )
             ->when($ast = $compiler->parse('C'))
